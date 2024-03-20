@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registraciona forma</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registraciona forma</h1>
+    <p>Molimo vas da popunite formu zahtevanim informacijama.</p>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <label for="first-name">Upišite ime: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Upišite prezime: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Upišite email: <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Kreirajte novu šifru: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Tip naloga (obavezno)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Lični nalog</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Poslovni nalog</label>
+      </fieldset>
+      <fieldset>
+        <label for="profile-picture">Upload profilne slike:</label>
+		<div class="inputfile-box">
+  <input type="file" id="file" class="inputfile" onchange='uploadFile(this)'>
+  <label for="file">
+    <span id="file-name" class="file-box"></span>
+    <span class="file-button">
+      <i class="fa fa-upload" aria-hidden="true"></i>
+      Izaberite fajl
+    </span>
+  </label>
+</div>
+        <label for="age">Upišite koliko imate godina: <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">Kako ste čuli za nas?
+          <select id="referrer" name="referrer">
+            <option value="">(izaberite)</option>
+            <option value="1">Vesti</option>
+            <option value="2">YouTube</option>
+            <option value="3">Forum</option>
+            <option value="4">Ostalo</option>
+          </select>
+        </label>
+        <label for="bio">Biografija:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Dosadašnje IT iskustvo..."></textarea>
+        </label>
+      </fieldset>
+      <label for="terms-and-conditions">
+        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> Prihvatam <a href="https://www.freecodecamp.org/news/terms-of-service/">uslove korišćenja</a>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+	<script src="./script.js"></script>
+  </body>
+</html>
